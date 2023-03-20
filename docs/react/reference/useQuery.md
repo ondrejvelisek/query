@@ -80,6 +80,7 @@ const result = useQuery({
   - Must return a promise that will either resolve data or throw an error.
 - `enabled: boolean`
   - Set this to `false` to disable this query from automatically running.
+  - Note: this hook remains reactive even if set to `false`. Means component rerenders and returned query result is up-to-date when query is updated from another place if the query key matches.
   - Can be used for [Dependent Queries](../guides/dependent-queries).
 - `retry: boolean | number | (failureCount: number, error: TError) => boolean`
   - If `false`, failed queries will not retry by default.
